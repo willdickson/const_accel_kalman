@@ -1,4 +1,4 @@
-## h5_logger 
+## const_accel_kalman 
 
 A dead simple implementation of a Kalman filter with a constant acceleration model (based on pykalman).
 
