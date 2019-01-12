@@ -25,7 +25,6 @@ data = np.loadtxt('data.txt')
 dt = 1/60.0 
 qval = 0.02
 rval = 1.0
-t = np.arange(data.shape[0])*dt
 
 kf = ConstAccelKalmanFilter(dt, qval, rval) 
 data_filt, cov_filt = kf.smooth(data)
