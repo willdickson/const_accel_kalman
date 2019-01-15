@@ -6,14 +6,15 @@ import matplotlib.pyplot as plt
 from const_accel_kalman import ConstAccelKalmanFilter
 
 data = np.loadtxt('data.txt')
+dt = np.loadtxt('dt.txt')
 
-dt = 1/60.0 
-qval = 0.02
+qval = 0.0002
 rval = 1.0
-t = np.arange(data.shape[0])*dt
+t = np.zeros((dt.shape[0]+1,))
+t[1:] = dt.cumsum()
 
-kf = ConstAccelKalmanFilter(dt, qval, rval) 
-data_filt, cov_filt = kf.smooth(data)
+kf = ConstAccelKalmanFilter(qval, rval) 
+data_filt, cov_filt = kf.smooth(data,dt)
 
 x = data[:,0]
 y = data[:,1]
