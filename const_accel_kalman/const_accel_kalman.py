@@ -49,7 +49,7 @@ def get_state_transition_matrix(ndim,dt):
     _dt = np.array(dt)
 
     if _dt.ndim != 0 and _dt.ndim != 1:
-        raise ValueError, 'dt must be scalar or 1-d array'
+        raise ValueError('dt must be scalar or 1-d array')
 
     if _dt.ndim == 0:
 
@@ -74,7 +74,7 @@ def get_observation_matrix(ndim):
 def get_state_transition_covariance_matrix(ndim,dt,qval):
     _dt = np.array(dt)
     if _dt.ndim !=0 and _dt.ndim != 1:
-        raise ValueError, 'dt must be scalar or 1-d array'
+        raise ValueError('dt must be scalar or 1-d array')
 
     if _dt.ndim ==1:
         dt_mean = _dt.mean()
